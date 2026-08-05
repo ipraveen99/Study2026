@@ -1,0 +1,19 @@
+# This is a workflow to test the github actions
+name: Test Workflow
+
+on: 
+  push:
+    branches:
+    - main
+
+jobs:
+  name: Main jobs
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fetch repository code
+        uses: actions/checkout@v4
+
+      - name: Run some command
+        run: echo "Hellow world"
