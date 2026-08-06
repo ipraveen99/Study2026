@@ -3,18 +3,18 @@ name: This is the new deployment line
 on:
   push:
     branches:
-      - main
+    - main
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-  steps:
-  - name: Fetch repository code
-    uses: actions/checkout@v4
+    steps:
+    - name: Fetch repository code
+      uses: actions/checkout@v4
       
-  - name: This is the job to display the directory structure
-    run: ls -al
+    - name: This is the job to display the directory structure
+      run: ls -al
 
-  - name: This is the job to display date
-    run: date
+    - name: This is the job to display date
+      run: date
