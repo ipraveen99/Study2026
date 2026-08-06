@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Fetch repository code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       
     - name: This is the job to display the directory structure
       run: ls -al
