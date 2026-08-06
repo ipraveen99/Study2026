@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Fetch repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Run some command
         run: echo "Hellow world"
