@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icons/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="datatable/datatables.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="scripts/charts2.js"></script>
+    <script src="scripts/jquery-3.7.1.min.js"></script>
+    <!-- <script src="scripts/snippets.js"></script> -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="datatable/datatables.min.js"></script>
+     <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+    <script src="scripts/script.js"></script>
+
+</head>
+<body>
+<div class="pagelayout">
+    <div class="sidebar">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="">
+        </div>
+        <div class="sidenavbar">
+            <ul>
+                    <li class="active">
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                            <a href="#">Tasks</a>
+                            <ul>
+                                    <li><a href="#">Today's tasks</a></li>
+                                    <li>
+                                            <a href="#">DrillDown</a>
+                                            <ul>
+                                                    <li><a href="#">Today's tasks</a></li>
+                                                    <li><a href="#">Urgent</a></li>
+                                                    <li>
+                                                        <a href="#">Overdues</a>
+                                                            <ul>
+                                                                    <li><a href="#">Today's tasks</a></li>
+                                                                    <li><a href="#">Urgent</a></li>
+                                                                    <li><a href="#">Overdues</a></li>
+                                                                    <li><a href="#">Recurring</a></li>
+                                                                    <li><a href="#">Settings</a></li>
+                                                            </ul>
+                                                    </li>
+                                                    <li><a href="#">Recurring</a></li>
+                                                    <li><a href="#">Settings</a></li>
+                                            </ul>
+                                    </li>
+                                    <li>
+                                            <a href="#">Overdues</a>
+                                            <ul>
+                                                    <li><a href="#">Today's tasks</a></li>
+                                                    <li><a href="#">Urgent</a></li>
+                                                    <li><a href="#">Overdues</a></li>
+                                                    <li><a href="#">Recurring</a></li>
+                                                    <li><a href="#">Settings</a></li>
+                                            </ul>
+                                    </li>
+                                    <li><a href="#">Recurring</a></li>
+                                    <li><a href="#">Settings</a></li>
+                            </ul>
+                    </li>
+                    <li>
+                            <a href="#">Calendar</a>
+                            <ul>
+                                    <li><a href="#">Current Month</a></li>
+                                    <li><a href="#">Current Week</a></li>
+                                    <li><a href="#">Previous Month</a></li>
+                                    <li><a href="#">Previous Week</a></li>
+                            </ul>
+                    </li>
+                  
+            </ul>
+        </div>
+    </div>
+    <div class="contentwrap">
+        <header class="shadow-sm">
+            <button class="menubtn">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="navleft">
+                <h4>
+                    Discount
+                </h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="bi bi-house-fill"></i>
+                </a>
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        Page name
+                </a>
+                </li>
+            </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Data table
+                </li>
+                </ol>
+              </nav>
+            </div>
+              <div class="navright">
+                <div class="switchlinks">
+                   Midtown Market 
+                        <button data-bs-toggle="modal" data-bs-target="#switchmodal">
+                            Switch
+                        </button>
+                </div>
+              <!-- <form class="col-12 nasearch col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+              </form> -->
+              <div class="navlinks">
+                <a href="#">
+                  <i class="bi bi-gear"></i>
+                </a>
+                <a href="#" title="Dashboard">
+                  <i class="bi bi-speedometer"></i>
+                </a>
+                <a href="#">
+                  <i class="bi bi-info-lg"></i>
+              </a>
+                <a href="#">
+                    <i class="bi bi-bell"></i>
+                    <span>20</span>
+                </a>
+                <a href="#">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+              <div class="dropdown text-end">
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="img/user.png" alt="user" width="32" height="32" class="rounded-circle">
+                  Hi Santhosh
+                </a>
+                <ul class="dropdown-menu text-small shadow-sm">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Account</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope"></i> Inbox</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i> Sign out</a></li>
+                </ul>
+              </div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="contentbox">
+                <div class="titles borderd">
+                  <div class="titlegroup">
+                <h5>
+                   Dashboard
+                </h5>
+                <select class="form-select" name="" id="">
+                  <option value="">
+                    Select another new tiltle
+                  </option>
+                  <option value="">
+                    Select another tiltle
+                  </option>
+                </select>
+              </div>
+              <div class="btns">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#selectlistmodal">
+                    <i class="bi bi-plus"></i> Select list
+                </button>
+                <button type="button" class="btn toastbtn btn-success">
+                  <i class="bi bi-trophy"></i>
+                </button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#errormodal">
+                 <i class="bi bi-grid-3x3-gap-fill"></i>
+                </button>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#infomodal">
+                  <i class="bi bi-printer"></i>
+                </button>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="dbcardwraper4">
+                  <div class="dbcard">
+                    <h4>
+                      23489
+                      <small>
+                        Card Name
+                      </small>
+                    </h4>
+                    <img src="img/ticket.png" alt="">
+                  </div>
+                  <div class="dbcard">
+                    <h4>
+                      23489
+                      <small>
+                        Card Name
+                      </small>
+                    </h4>
+                    <img src="img/business.png" alt="">
+                  </div>
+                  <div class="dbcard">
+                    <h4>
+                      23489
+                      <small>
+                        Card Name
+                      </small>
+                    </h4>
+                     <img src="img/promo.png" alt="">
+                  </div>
+                  <div class="dbcard">
+                    <h4>
+                      23489
+                      <small>
+                        Card Name
+                      </small>
+                    </h4>
+                    <img src="img/queing.png" alt="">
+                  </div>
+                </div>
+              </div>
+         
+            </div>
+
+            <hr>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="dbcolum">
+                <div class="dbcltitle">
+                  Accordion
+                </div>
+                <div class="dbcolcontent">
+                <div class="accordion accordion-flush" id="dashboardaccordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#dashboardaccordion">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Accordion Item #2
+                      </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#dashboardaccordion">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Accordion Item #3
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#dashboardaccordion">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </div>
+              <div class="col-md-6">
+                <p class="d-inline-flex gap-1">
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseone" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Collapse sample
+                </a>
+              </p>
+                  <div class="collapse" id="collapseone">
+                    <div class="card card-body">
+                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                    </div>
+                  </div>
+         
+            </div>
+         
+ 
+            
+     
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            Title backgrond card
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-7">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam libero debitis nam blanditiis quam accusantium vitae, mollitia nihil autem facere id possimus animi sapiente minima expedita fugiat commodi consectetur culpas
+              </div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum eos quibusdam eligendi accusamus pariatur numquam nam deleniti aut libero ab? Earum at ullam iste voluptatibus nisi quibusdam eaque tenetur repudiandae!
+              </div>
+              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet laboriosam laudantium nemo consequuntur unde quaerat eos dolorem provident, repellendus quod eum nesciunt eius a at dignissimos voluptates et neque rerum.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <table class="table table-hover" style="vertical-align: middle;">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>
+                    <div class="greencircle" role="circlebar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="--value:65"></div>
+                  </td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>
+                    <div class="redcircle" role="circlebar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" style="--value:56"></div>
+                  </td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>
+                    <div class="bluecircle" role="circlebar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" style="--value:56"></div>
+                  </td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <hr>
+        <div class="row">
+          <div class="col-md-6">
+   
+    
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+              <h5>
+                  Bar Chart
+              </h5>
+<div id="barcharts"></div>
+</div>
+<div class="col-md-4">
+  <h5>
+      Stepped Chart
+  </h5>
+
+</div>
+<div class="col-md-4">
+  <h5>
+      Pie Chart
+  </h5>
+<div id="donutchart" ></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+  <h5>
+      Calendar Chart
+  </h5>
+
+</div>
+<div class="col-md-6">
+  <h5>
+      Column Chart
+  </h5>
+<div id="chart_div" ></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+  <h5>
+      Basic Column Chart
+  </h5>
+<div id="columbasic" ></div>
+</div>
+<div class="col-md-6">
+  <div class="dbcolum">
+                  <div class="dbcltitle">
+                    Pie / Donut Chart
+                  </div>
+                  <div class="dbcolcontent">
+                    <div id="piechart"  style="height: 300px; width: 300px; margin: auto;"></div>
+                    
+                  </div>
+                </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h5>
+       Trendiline Chart
+    </h5>
+  <div id="trendilinechart" ></div>
+  </div>
+  <div class="col-md-6">
+    <h5>
+      Organization Chart
+    </h5>
+  
+  </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+
+    </div>
+  </div>
+    </div>
+</div>
+
+<!--modals-->
+
+<!-- Modal -->
+<div class="modal fade" id="switchmodal" tabindex="-1" aria-labelledby="switchmodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="switchmodalLabel">Switch Shop</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="shoplistswitch">
+            <li>
+                <picture>
+                    <img src="img/logo.jpg" alt="">
+                </picture>
+               <a href=""> Midtown Market</a>
+            </li>
+            <li>
+                <picture>
+                    <img src="img/logo.png" alt="">
+                </picture>
+                <a href=""> Midtown Market</a>
+            </li>
+            <li>
+                <picture>
+                    <img src="img/logo.jpg" alt="">
+                </picture>
+                <a href=""> Midtown Market</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="warningmodal" tabindex="-1" aria-labelledby="warningmodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-warning-subtle">
+          <h1 class="modal-title fs-5" id="warningmodalLabel">warning</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alertcontents">
+            <i class="bi bi-exclamation-square text-warning"></i>
+            <p>
+          Culpa doloremque necessitatibus harum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="errormodal" tabindex="-1" aria-labelledby="errormodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-danger-subtle">
+          <h1 class="modal-title fs-5" id="errormodalLabel">error</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alertcontents">
+            <i class="bi bi-exclamation-diamond-fill text-danger"></i>
+            <p>
+          Culpa doloremque necessitatibus harum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="infomodal" tabindex="-1" aria-labelledby="infomodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-info-subtle">
+          <h1 class="modal-title fs-5" id="infomodalLabel">Info</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alertcontents">
+            <i class="bi bi-info-circle text-info"></i>
+            <p>
+          Culpa doloremque necessitatibus harum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="selectlistmodal" tabindex="-1" aria-labelledby="selectlistLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="selectlistLabel">
+            List group
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <div class="selectlistcontent">
+          <div class="input-group mb-3">
+            <input type="search" class="form-control" placeholder="Search list items" aria-label="Search list items" aria-describedby="Search-list-items">
+            <button class="btn btn-outline-secondary" type="button" id="Search-list-items">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+              <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+              <label class="form-check-label" for="secondCheckbox">Second checkbox</label>
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+              <label class="form-check-label" for="thirdCheckbox">Third checkbox</label>
+            </li>
+          </ul>
+             
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-info">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="img/logo.png" class="rounded me-2" alt="...">
+    <strong class="me-auto">Message</strong>
+    <small>11 mins ago</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Hello, world! This is a toast message.
+  </div>
+</div>
+
+</body>
+</html>

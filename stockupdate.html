@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icons/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="datatable/datatables.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="scripts/jquery-3.7.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="datatable/datatables.min.js"></script>
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+<div class="pagelayout">
+    <div class="sidebar">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="">
+        </div>
+        <div class="sidenavbar">
+            <ul>
+                    <li class="active">
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                            <a href="#">Tasks</a>
+                            <ul>
+                                    <li><a href="#">Today's tasks</a></li>
+                                    <li>
+                                            <a href="#">DrillDown</a>
+                                            <ul>
+                                                    <li><a href="#">Today's tasks</a></li>
+                                                    <li><a href="#">Urgent</a></li>
+                                                    <li>
+                                                        <a href="#">Overdues</a>
+                                                            <ul>
+                                                                    <li><a href="#">Today's tasks</a></li>
+                                                                    <li><a href="#">Urgent</a></li>
+                                                                    <li><a href="#">Overdues</a></li>
+                                                                    <li><a href="#">Recurring</a></li>
+                                                                    <li><a href="#">Settings</a></li>
+                                                            </ul>
+                                                    </li>
+                                                    <li><a href="#">Recurring</a></li>
+                                                    <li><a href="#">Settings</a></li>
+                                            </ul>
+                                    </li>
+                                    <li>
+                                            <a href="#">Overdues</a>
+                                            <ul>
+                                                    <li><a href="#">Today's tasks</a></li>
+                                                    <li><a href="#">Urgent</a></li>
+                                                    <li><a href="#">Overdues</a></li>
+                                                    <li><a href="#">Recurring</a></li>
+                                                    <li><a href="#">Settings</a></li>
+                                            </ul>
+                                    </li>
+                                    <li><a href="#">Recurring</a></li>
+                                    <li><a href="#">Settings</a></li>
+                            </ul>
+                    </li>
+                    <li>
+                            <a href="#">Calendar</a>
+                            <ul>
+                                    <li><a href="#">Current Month</a></li>
+                                    <li><a href="#">Current Week</a></li>
+                                    <li><a href="#">Previous Month</a></li>
+                                    <li><a href="#">Previous Week</a></li>
+                            </ul>
+                    </li>
+                  
+            </ul>
+        </div>
+    </div>
+    <div class="contentwrap">
+        <header class="shadow-sm">
+            <button class="menubtn">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="navleft">
+                <h4>
+                    Product List
+                </h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="bi bi-house-fill"></i>
+                </a>
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        Page name
+                </a>
+                </li>
+            </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Data table
+                </li>
+                </ol>
+              </nav>
+            </div>
+              <div class="navright">
+                <div class="switchlinks">
+                   Midtown Market 
+                        <button data-bs-toggle="modal" data-bs-target="#switchmodal">
+                            Switch
+                        </button>
+                </div>
+              <!-- <form class="col-12 nasearch col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+              </form> -->
+              <div class="navlinks">
+                <a href="#">
+                    <i class="bi bi-info-lg"></i>
+                </a>
+                <a href="#">
+                    <i class="bi bi-bell"></i>
+                </a>
+                <a href="#">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+              <div class="dropdown text-end">
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="img/user.png" alt="user" width="32" height="32" class="rounded-circle">
+                  Hi Santhosh
+                </a>
+                <ul class="dropdown-menu text-small shadow-sm">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Account</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope"></i> Inbox</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i> Sign out</a></li>
+                </ul>
+              </div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="datatables">
+                <div class="titles">
+                <h5>
+                    Stock Update
+                </h5>
+                <div class="btns">
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#filtermodal">
+                        <i class="bi bi-funnel"></i>
+                    </button>
+                    <a href="#" type="button" class="btn btn-primary">
+                        <i class="bi bi-plus"></i> Add Stock
+                    </a>
+                </div>
+            </div>
+            <table id="adminTable" class="table themetable" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Transaction No</th>
+                        <th>Transaction Date</th>
+                        <th>Processed By</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+              
+                    </tr>
+                   
+                </tbody>
+
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--modals-->
+
+<!-- Modal -->
+<div class="modal fade" id="switchmodal" tabindex="-1" aria-labelledby="switchmodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="switchmodalLabel">Switch Shop</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="shoplistswitch">
+            <li>
+                <picture>
+                    <img src="img/logo.jpg" alt="">
+                </picture>
+               <a href=""> Midtown Market</a>
+            </li>
+            <li>
+                <picture>
+                    <img src="img/logo.png" alt="">
+                </picture>
+                <a href=""> Midtown Market</a>
+            </li>
+            <li>
+                <picture>
+                    <img src="img/logo.jpg" alt="">
+                </picture>
+                <a href=""> Midtown Market</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="filtermodal" tabindex="-1" aria-labelledby="filtermodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="filtermodalLabel">Filter</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="filterclms">
+            <div class="col">
+                <label for="Filter">Data Source</label>
+            <select class="form-select" aria-label="Filter type">
+                <option selected>All</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col">
+                <label for="Filter">Date from</label>
+                <input type="date" class="form-control" id="" placeholder="">
+            </div>
+            <div class="col">
+                <label for="Filter">Date to</label>
+                <input type="date" class="form-control" id="" placeholder="">
+            </div>
+          
+          </div>
+        </div>
+        <div class="modal-footer">
+            <input type="reset" class="btn btn-light" value="Reset">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info">Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
