@@ -44,4 +44,15 @@ jobs:
             echo "GITHUB_REF : " ${{github.ref}}
             echo "GITHUB_SHA : " ${{github.sha}}
             echo "RUNNER_OS : " ${{runner.os}}
-
+          
+  Lab-5-Multiple-Steps-System-Info:
+     needs: Lab-4-Environment-Variables
+     run-on: ubuntu-latest
+     steps:
+       - name: "Lab 5 : Multiple Steps System Info"
+         run: |
+             echo "  Present Working Directory : " pwd
+             echo "  Who am i : " whoami
+             echo "  Date : " date
+             echo "  User : " user -a
+             
