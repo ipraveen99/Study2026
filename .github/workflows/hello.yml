@@ -25,3 +25,11 @@ jobs:
             ls
             ls -a
             find
+
+      - name: "Lab 4 : Environment Variables"
+        run: |
+            echo "GITHUB_WORKFLOW : " ${{github.workflow}}
+            echo "GITHUB_REPOSITORY : " ${{github.repository}}
+            echo "GITHUB_REF : " ${{github.ref}}
+            echo "GITHUB_SHA : " ${{github.sha}}
+            echo "RUNNER_OS : " ${{runner.os}}
