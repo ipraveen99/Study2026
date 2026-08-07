@@ -31,5 +31,12 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
+    - name: GitHub Details
+      run: |
+         echo "Actor = " ${{github.actor}}
+         echo "repository = " ${{github.repository}}
+         echo "Ref = " ${{github.ref}}
+         echo "Sha = " ${{github.sha}}
+         
     - name: Finished
       run: echo Finished
