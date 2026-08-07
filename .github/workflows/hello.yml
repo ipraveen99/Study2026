@@ -6,13 +6,18 @@ on:
     - main
 
 jobs:
-  build:
+  First-Workflow:
     runs-on: ubuntu-latest
 
     steps:
       - name: "Lab 1 : First Workflow"
         run: echo 'Hello DevOps'
 
+  Linux-Runner:
+    needs: First-Workflow
+    runs-on: ubuntu-latest
+
+    steps:
       - name: "Lab 2 : Linux Runner"
         run: |
             echo "  Present Working Directory : " pwd
@@ -20,12 +25,22 @@ jobs:
             echo "  Date : " date
             echo "  User : " user -a
 
+  Repository-Inspection:
+    needs: Linux-Runner
+    runs-on: ubuntu-latest
+
+    steps:
       - name: "Lab 3 : Repository Inspection"
         run: |
             ls
             ls -a
             find
 
+  Environment-Variables:
+    needs: Repository-Inspection
+    runs-on: ubuntu-latest
+
+    steps:
       - name: "Lab 4 : Environment Variables"
         run: |
             echo "GITHUB_WORKFLOW : " ${{github.workflow}}
