@@ -67,7 +67,9 @@ jobs:
             find
 
   Lab-6-Multiple-Steps:
-    needs: Lab-5-Multiple-Jobs-Repository-Details
+    needs:
+      - Lab-5-Multiple-Jobs-System-Info
+      - Lab-5-Multiple-Jobs-Repository-Details
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout repository"
