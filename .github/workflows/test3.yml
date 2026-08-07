@@ -1,6 +1,6 @@
 name: Website CI
 env:
-  APP_NAME: ${{vars.APPLICATION_NAME}}
+  APP_NAME: ${{vars.APPLICATION_NAME}} 
   ENVIRONMENT: development
   COMPANY: CloudNova
  
