@@ -19,11 +19,12 @@ jobs:
 
     - name: Application Name ${{env.APP_NAME}}
       run: |
+        echo "Verify the following details"
         echo $APP_NAME
         echo $ENVIRONMENT
         echo $COMPANY
  
-    - name: Display ls
+    - name: Display ls for ${{env.COMPANY}}.${{env.ENVIRONMENT}}.${{env.APP_NAME}}
       run: ls 
       
   verify:
