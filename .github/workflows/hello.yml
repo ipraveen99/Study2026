@@ -1,0 +1,21 @@
+name: Practice
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Lab 1 : Display a text"
+        run: echo 'Hello DevOps'
+
+      - name: "Lab 2 : pwd whoami date uname -a"
+        run: |
+            echo "  Present Working Directory : " pwd
+            echo "  Who am i : " whoami
+            echo "  Date : " date
+            echo "  User : " user -a
