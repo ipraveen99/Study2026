@@ -6,17 +6,15 @@ on:
     - main
 
 jobs:
-  First-Workflow:
+  Lab-1-First-Workflow:
     runs-on: ubuntu-latest
-
     steps:
       - name: "Lab 1 : First Workflow"
         run: echo 'Hello DevOps'
 
-  Linux-Runner:
-    needs: First-Workflow
+  Lab-2-Linux-Runner:
+    needs: Lab-1-First-Workflow
     runs-on: ubuntu-latest
-
     steps:
       - name: "Lab 2 : Linux Runner"
         run: |
@@ -25,10 +23,9 @@ jobs:
             echo "  Date : " date
             echo "  User : " user -a
 
-  Repository-Inspection:
-    needs: Linux-Runner
+  Lab-3-Repository-Inspection:
+    needs: Lab-2-Linux-Runner
     runs-on: ubuntu-latest
-
     steps:
       - name: "Lab 3 : Repository Inspection"
         run: |
@@ -36,10 +33,9 @@ jobs:
             ls -a
             find
 
-  Environment-Variables:
-    needs: Repository-Inspection
+  Lab-4-Environment-Variables:
+    needs: Lab-3-Repository-Inspection
     runs-on: ubuntu-latest
-
     steps:
       - name: "Lab 4 : Environment Variables"
         run: |
@@ -48,3 +44,24 @@ jobs:
             echo "GITHUB_REF : " ${{github.ref}}
             echo "GITHUB_SHA : " ${{github.sha}}
             echo "RUNNER_OS : " ${{runner.os}}
+            
+   Lab-5-Multiple-Steps-System-Info:
+     needs: Lab-4-Environment-Variables
+     run-on: ubuntu-latest
+     steps:
+      - name: "Lab 5 : Multiple Steps System Info"
+        run: |
+            echo "  Present Working Directory : " pwd
+            echo "  Who am i : " whoami
+            echo "  Date : " date
+            echo "  User : " user -a
+
+   Lab-5-Multiple-Steps-Repository-Details:
+     needs: Lab-4-Environment-Variables
+     run-on: ubuntu-latest
+     steps:
+      - name: "Lab 5 : Multiple Steps Repository Details"
+        run: |
+            ls
+            ls -a
+            find
