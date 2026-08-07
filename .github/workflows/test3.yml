@@ -1,4 +1,8 @@
 name: Website CI
+env:
+  APP_NAME: devops-company-site
+  ENVIRONMENT: development
+  COMPANY: CloudNova
  
 on:
   push:
@@ -12,6 +16,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+
+    - name: Application Name ${{env.APP_NAME}}
+      run: |
+        echo $APP_NAME
+        echo $ENVIRONMENT
+        echo $COMPANY
  
     - name: Display ls
       run: ls 
@@ -23,4 +33,3 @@ jobs:
     steps:
     - name: Finished
       run: echo Finished
- 
