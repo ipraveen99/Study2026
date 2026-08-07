@@ -18,11 +18,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Application Name ${{env.APP_NAME}}
-      run: |
-        echo "Verify the following details"
-        echo $APP_NAME
-        echo $ENVIRONMENT
-        echo $COMPANY
+      run: echo "Verify the following details" $APP_NAME $ENVIRONMENT $COMPANY
       env:
         APP_NAME: Test App
         ENVIRONMENT: Test Environment
