@@ -9,14 +9,14 @@ jobs:
   Lab-1-First-Workflow:
     runs-on: ubuntu-latest
     steps:
-      - name: "Lab 1 : First Workflow"
+      - name: "First Workflow"
         run: echo 'Hello DevOps'
 
   Lab-2-Linux-Runner:
     needs: Lab-1-First-Workflow
     runs-on: ubuntu-latest
     steps:
-      - name: "Lab 2 : Linux Runner"
+      - name: "Linux Runner"
         run: |
             echo "  Present Working Directory : " pwd
             echo "  Who am i : " whoami
@@ -27,7 +27,7 @@ jobs:
     needs: Lab-2-Linux-Runner
     runs-on: ubuntu-latest
     steps:
-      - name: "Lab 3 : Repository Inspection"
+      - name: "Repository Inspection"
         run: |
             ls
             ls -a
@@ -37,7 +37,7 @@ jobs:
     needs: Lab-3-Repository-Inspection
     runs-on: ubuntu-latest
     steps:
-      - name: "Lab 4 : Environment Variables"
+      - name: "Environment Variables"
         run: |
             echo "GITHUB_WORKFLOW : " ${{github.workflow}}
             echo "GITHUB_REPOSITORY : " ${{github.repository}}
@@ -45,23 +45,43 @@ jobs:
             echo "GITHUB_SHA : " ${{github.sha}}
             echo "RUNNER_OS : " ${{runner.os}}
 
-  Lab-5-Multiple-Steps-System-Info:
+  Lab-5-Multiple-Jobs-System-Info:
     needs: Lab-4-Environment-Variables
     runs-on: ubuntu-latest
     steps:
-      - name: "Lab 5 : Multiple Steps System Info"
+      - name: "System Info"
         run: |
             echo "  Present Working Directory : " pwd
             echo "  Who am i : " whoami
             echo "  Date : " date
             echo "  User : " user -a
 
-  Lab-5-Multiple-Steps-Repository-Details:
+  Lab-5-Multiple-Jobs-Repository-Details:
     needs: Lab-4-Environment-Variables
     runs-on: ubuntu-latest
     steps:
-      - name: "Lab 5 : Multiple Steps Repository Details"
+      - name: "Repository Details"
         run: |
             ls
             ls -a
             find
+
+  Lab-6-Multiple-Steps:
+    needs: Lab-5-Multiple-Jobs-Repository-Details
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v7
+        
+      - name: "Print date"
+        run: date
+        
+      - name: "Print working directory"
+        run: pwd
+
+      - name: "List files"
+        run: ls -ashs
+
+      - name: "Print completion message"
+        run: echo "Job completed"
+        
