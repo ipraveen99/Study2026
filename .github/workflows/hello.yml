@@ -10,12 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Lab 1 : Display a text"
+      - name: "Lab 1 : First Workflow"
         run: echo 'Hello DevOps'
 
-      - name: "Lab 2 : pwd whoami date uname -a"
+      - name: "Lab 2 : Linux Runner"
         run: |
             echo "  Present Working Directory : " pwd
             echo "  Who am i : " whoami
             echo "  Date : " date
             echo "  User : " user -a
+
+      - name: "Lab 3 : Repository Inspection"
+        run: |
+            ls
+            ls -a
+            find
