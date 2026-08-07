@@ -23,6 +23,9 @@ jobs:
         echo $APP_NAME
         echo $ENVIRONMENT
         echo $COMPANY
+      env:
+        APP_NAME: Test App
+        ENVIRONMENT: Test Environment
  
     - name: Display ls for ${{env.COMPANY}}.${{env.ENVIRONMENT}}.${{env.APP_NAME}}
       run: ls 
