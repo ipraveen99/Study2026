@@ -1,0 +1,16 @@
+name: Fast API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  FastAPI-Deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Upload files to the server
+      uses: action/checkout@v4
+
+    - name: Verify the files uploaded
+      run: ls -al
+    
