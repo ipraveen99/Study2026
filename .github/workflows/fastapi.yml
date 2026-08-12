@@ -42,4 +42,7 @@ jobs:
 
       - name: Check the lint
         run: ruff check .
+
+      - name: Do the python test
+        run: pytest
             
