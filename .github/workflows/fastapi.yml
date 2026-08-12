@@ -14,9 +14,14 @@ jobs:
       - name: Verify checked-out files
         run: ls -al
 
+      - name: Update api
+        run: sudo apt update
+        
       - name: Install Python
-        run: |
-            sudo apt update
-            sudo apt install -y python3 python3-pip python3-venv
-            python3 --version
-            python3 -m pip --version
+        run: sudo apt install -y python3 python3-pip python3-venv
+
+      - name: Verify the Python Version
+        run: python3 --version
+
+      - name: Verify pip version
+        run: python3 -m pip --version
