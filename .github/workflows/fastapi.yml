@@ -36,4 +36,7 @@ jobs:
         run: |
             python --version
             pip --version
+
+      - name: Install the dependancies
+        run: pip install fastapi uvicorn sqlalchemy pytest httpx
             
