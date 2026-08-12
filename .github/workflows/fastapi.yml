@@ -49,9 +49,9 @@ jobs:
         run: pytest
 
       - name: Create artiface
-        uses: actions/upload-artiface@4
+        uses: actions/upload-artifact@v4
         with:
-          name: "Create ${{env.ARTIFACT_FILE_NAME}}"
+          name: Create Artifact
           path: ${{env.ARTIFACT_FILE_NAME}}
           if-no-files-found: error
           retention-days: 7
