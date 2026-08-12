@@ -18,11 +18,11 @@ jobs:
 
       - name: Prepare the environment for build
         run: |
-             echo -e "\n\n\n\n\n"
+             printf "\n\n\n\n\n"
              echo "************START APT UPDATE*******"
              sudo apt update
              echo "************END APT UPDATE*******"
-             echo -e "\n\n\n\n\n"
+             printf "\n\n\n\n\n"
              echo "************START INSTALLING PYTHON3 AND PIP*******"
              sudo apt install -y python3 python3-pip python3-venv
              echo "************END INSTALLING PYTHON3 AND PIP*******"
