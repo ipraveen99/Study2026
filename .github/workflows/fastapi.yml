@@ -38,7 +38,7 @@ jobs:
             pip --version
 
       - name: Install the dependancies
-        run: pip install fastapi uvicorn sqlalchemy pytest httpx
+        run: pip install fastapi uvicorn sqlalchemy pytest httpx ruff
 
       - name: Check the lint
         run: ruff check .
