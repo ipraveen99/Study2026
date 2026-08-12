@@ -50,6 +50,9 @@ jobs:
 
       - name: List all files in the server
         run: ls -al
+
+      - name: "Create ${{env.ARTIFACT_FILE_NAME}}"
+        run: zip -r ${{env.ARTIFACT_FILE_NAME}} . -x "*.DS_Store" "*.git*" "*.github*"
         
       - name: Create artiface
         uses: actions/upload-artifact@v4
