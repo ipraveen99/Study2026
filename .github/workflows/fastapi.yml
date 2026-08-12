@@ -48,9 +48,6 @@ jobs:
       - name: Do the python test
         run: pytest
 
-      - name: Exit from the environment
-        run: deactivate
-
       - name: List all files in the server
         run: ls -al
         
