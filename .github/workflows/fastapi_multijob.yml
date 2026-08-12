@@ -1,0 +1,73 @@
+name: Fast API With Multiple Job
+env:
+  ARTIFACT_FILE_NAME: "fastapi_artifact.zip"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository files
+        uses: actions/checkout@v4
+
+      - name: Verify checked-out files
+        run: ls -al
+
+      - name: Prepare the environment for build
+        run: |
+             echo -e "\n\n\n\n\n"
+             echo "************START APT UPDATE*******"
+             sudo apt update
+             echo "************END APT UPDATE*******"
+             echo -e "\n\n\n\n\n"
+             echo "************START INSTALLING PYTHON3 AND PIP*******"
+             sudo apt install -y python3 python3-pip python3-venv
+             echo "************END INSTALLING PYTHON3 AND PIP*******"
+             echo -e "\n\n\n\n\n"
+             echo "************START VERSION CHECK OF PYTHON3 AND PIP*******"
+             python3 --version
+             python3 -m pip --version
+             echo "************END VERSION CHECK OF PYTHON3 AND PIP*******"
+             echo -e "\n\n\n\n\n"
+             echo "************START ENVIRONMENT CREATION AND ACTIVATION*******"
+             python3 -m venv env1
+             source env1/bin/activate
+             echo "************END ENVIRONMENT CREATION AND ACTIVATION*******"
+             echo -e "\n\n\n\n\n"
+             echo "************START VERSION CHECK OF PYTHON AND PIP ON ENVIRONMENT*******"
+             python --version
+             pip --version
+             echo "************END VERSION CHECK OF PYTHON AND PIP ON ENVIRONMENT*******"
+
+      - name: Install the dependancies
+        run: |
+             echo -e "\n\n\n\n\n"
+             echo "************START INSTALING FASTAPI*******"
+             pip install fastapi
+             echo "************END INSTALING FASTAPI*******"
+             echo -e "\n\n\n\n\n"
+             echo "************START INSTALING UVICORN*******"
+             pip install uvicorn
+             echo "************END INSTALING UVICORN*******"
+             echo -e "\n\n\n\n\n"
+             echo "************START INSTALING SQLALCHEMY*******"
+             pip install sqlalchemy
+             echo "************END INSTALING SQLALCHEMY*******"
+             echo -e "\n\n\n\n\n"
+             echo "************START INSTALING PYTEST*******"
+             pip install pytest
+             echo "************END INSTALING PYTEST*******"
+             echo -e "\n\n\n\n\n"
+             echo "************START INSTALING HTTPS*******"
+             pip install httpx
+             echo "************END INSTALING HTTPS*******"
+             echo -e "\n\n\n\n\n"
+             echo "************START INSTALING RUFF*******"
+             pip install ruff
+             echo "************END INSTALING RUFF*******"
+             
+      - name: Do the build process
+        run: ruff check .
