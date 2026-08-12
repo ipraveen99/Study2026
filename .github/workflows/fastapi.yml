@@ -25,3 +25,15 @@ jobs:
 
       - name: Verify pip version
         run: python3 -m pip --version
+
+      - name: Create environment
+        run: python3 -m venv env1
+
+      - name: Activate the environment
+        run: source env1/bin/activate
+
+      - name: Check the python and pip versions
+        run: |
+            python --version
+            pip --version
+            
