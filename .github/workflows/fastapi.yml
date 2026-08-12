@@ -1,4 +1,6 @@
 name: Fast API
+env:
+  ARTIFACT_FILE_NAME: "fastapi_artifact.zip"
 
 on:
   workflow_dispatch:
@@ -45,4 +47,12 @@ jobs:
 
       - name: Do the python test
         run: pytest
-            
+
+      - name: Create artiface
+        uses: actions/upload-artiface@4
+        with:
+          name: "Create ${{env.ARTIFACT_FILE_NAME}}"
+          path: ${{env.ARTIFACT_FILE_NAME}}
+          if-no-files-found: error
+          retention-days: 7
+          
