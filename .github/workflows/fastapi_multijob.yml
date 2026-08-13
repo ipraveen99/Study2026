@@ -43,8 +43,8 @@ jobs:
              pip3 install -r requirements-build.txt
              echo "************END INSTALING PACKAGES*******"
              
-      - name: Build the app
-        run: ruff checkout .
+      - name: Check the lint
+        run: ruff check .
   Test:
     needs: Build
     runs-on: ubuntu-latest
