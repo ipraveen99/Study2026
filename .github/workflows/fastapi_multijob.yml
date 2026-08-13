@@ -39,21 +39,9 @@ jobs:
 
       - name: Install the dependancies
         run: |
-             echo "************START INSTALING FASTAPI*******"
-             pip install fastapi
-             echo "************END INSTALING FASTAPI*******"
-             echo "************START INSTALING UVICORN*******"
-             pip install uvicorn
-             echo "************END INSTALING UVICORN*******"
-             echo "************START INSTALING SQLALCHEMY*******"
-             pip install sqlalchemy
-             echo "************END INSTALING SQLALCHEMY*******"
-             echo "************START INSTALING HTTPS*******"
-             pip install httpx
-             echo "************END INSTALING HTTPS*******"
-             echo "************START INSTALING RUFF*******"
-             pip install ruff
-             echo "************END INSTALING RUFF*******"
+             echo "************START INSTALING PACKAGES*******"
+             pip3 install requirements-build.txt
+             echo "************END INSTALING PACKAGES*******"
 
   Test:
     needs: Build
@@ -89,22 +77,9 @@ jobs:
 
       - name: Install the dependancies
         run: |
-             echo "************START INSTALING FASTAPI*******"
-             pip install fastapi
-             echo "************END INSTALING FASTAPI*******"
-             echo "************START INSTALING UVICORN*******"
-             pip install uvicorn
-             echo "************END INSTALING UVICORN*******"
-             echo "************START INSTALING SQLALCHEMY*******"
-             pip install sqlalchemy
-             echo "************END INSTALING SQLALCHEMY*******"
-             echo "************START INSTALING PYTEST*******"
-             pip install pytest
-             echo "************END INSTALING PYTEST*******"
-             echo "************START INSTALING HTTPS*******"
-             pip install httpx
-             echo "************END INSTALING HTTPS*******"
-
+             echo "************START INSTALING PACKAGES*******"
+             pip install requirements-test.txt
+             echo "************END INSTALING PACKAGES*******"
 
       - name: Do the test
         run: pytest
@@ -126,7 +101,7 @@ jobs:
       - name: Create artiface
         uses: actions/upload-artifact@v4
         with:
-          name: Create Artifact
+          name: ${{env.ARTIFACT_FILE_NAME}}
           path: ${{env.ARTIFACT_FILE_NAME}}
           if-no-files-found: error
           retention-days: 7  
