@@ -40,7 +40,7 @@ jobs:
       - name: Install the dependancies
         run: |
              echo "************START INSTALING PACKAGES*******"
-             pip3 install requirements-build.txt
+             pip3 install -r requirements-build.txt
              echo "************END INSTALING PACKAGES*******"
 
   Test:
@@ -78,7 +78,7 @@ jobs:
       - name: Install the dependancies
         run: |
              echo "************START INSTALING PACKAGES*******"
-             pip install requirements-test.txt
+             pip install -r requirements-test.txt
              echo "************END INSTALING PACKAGES*******"
 
       - name: Do the test
