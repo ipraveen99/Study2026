@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Check out repository files
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Verify checked-out files
         run: ls -al
@@ -51,7 +51,7 @@ jobs:
 
     steps:
       - name: Check out repository files
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Verify checked-out files
         run: ls -al
@@ -86,13 +86,13 @@ jobs:
       - name: Do the test
         run: pytest
 
-  Artifact:
+  Packaging:
     needs: Test
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository files
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Verify checked-out files
         run: ls -al
@@ -101,9 +101,42 @@ jobs:
         run: zip -r "${{ env.ARTIFACT_FILE_NAME }}" . -x "env1/*" "*/env1/*" ".git/*" ".github/*" "*.DS_Store"
 
       - name: Create artiface
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{env.ARTIFACT_FILE_NAME}}
           path: ${{env.ARTIFACT_FILE_NAME}}
           if-no-files-found: error
           retention-days: 7  
+
+  Deploy:
+    needs: Packaging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artiface
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{env.ARTIFACT_FILE_NAME}}
+      - name: Verify the downloaded artiface file
+        run: ls -al
+      - name: Deploy the articact to AWS
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{secrets.FAST_API_HOST}}
+          username: ${{secrets.FAST_API_USERNAME}}
+          key: ${{secrets.FAST_API_KEY}}
+          source: "./${{env.ARTIFACT_FILE_NAME}}"
+          target: "/opt/fastapi"
+
+      - name: Restart the services
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{secrets.FAST_API_HOST}}
+          username: ${{secrets.FAST_API_USERNAME}}
+          key: ${{secrets.FAST_API_KEY}}
+          script: |
+               cd /opt/fastapi
+               unzip -o "./${{env.ARTIFACT_FILE_NAME}}"
+               sudo systemctl restart fastapi.service
+               sudo systemctl status fastapi --no-page
+        
